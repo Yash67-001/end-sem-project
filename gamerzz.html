@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMERZZZ | Premium Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --glass-bg: rgba(16, 20, 30, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-color: #ffffff;
+            --neon-color: #00f2ff;
+            --card-hover: rgba(0, 242, 255, 0.4);
+            --bg-overlay: rgba(0,0,0,0.5);
+        }
+        [data-theme="light"] {
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --text-color: #1a1a1a;
+            --neon-color: #0d6efd;
+            --card-hover: rgba(13, 110, 253, 0.3);
+            --bg-overlay: rgba(255,255,255,0.2);
+        }
+        body {
+            background-image: url(https://wallpapercave.com/wp/wp7648520.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-overlay);
+            z-index: -1;
+            transition: 0.3s;
+        }
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 0 0 20px 20px;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--neon-color) !important;
+            text-shadow: 0 0 10px var(--neon-color);
+        }
+        h1 {
+            background: var(--glass-bg);
+            backdrop-filter: blur(5px);
+            border-left: 5px solid var(--neon-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin-top: 50px;
+            display: inline-block;
+            color: var(--text-color) !important;
+            border: none; 
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: var(--glass-bg) !important;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border) !important;
+            color: var(--text-color) !important;
+            border-radius: 15px !important;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 200px; 
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.05) !important;
+            box-shadow: 0 0 25px var(--card-hover) !important;
+            z-index: 10;
+        }
+        .card-img-top {
+            height: 120px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .btn-primary {
+            background-color: transparent;
+            border: 1px solid var(--neon-color);
+            color: var(--neon-color);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: var(--neon-color);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-color);
+        }
+        .carousel-item img {
+            height: 600px; px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .carousel {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        #theme-btn {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--neon-color);
+            margin-right: 15px;
+            transition: 0.3s;
+        }
+        #theme-btn:hover { transform: rotate(20deg); }
+        footer {
+            background: rgba(0,0,0,0.8);
+            padding: 30px 0;
+            border-top: 1px solid var(--neon-color);
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+
+    <header class="shadow-lg p-2 m-2">
+        <nav class="navbar navbar-expand-lg w-100">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">GAMERZZZ</a>
+                
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-moon-stars-fill" id="theme-btn" title="Toggle Theme"></i>
+                    
+                    <form class="d-flex" id="searchForm" role="search">
+                        <input class="form-control me-2 rounded-pill bg-dark text-light border-secondary" 
+                               type="search" id="searchInput" placeholder="Find game..." aria-label="Search">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> 
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                     <img src="https://tse2.mm.bing.net/th/id/OIP.lbx_7xNBn5uveChlWmwZOAHaFO?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-100 d-block">
+                    <div class="carousel-caption d-none d-md-block"><h5>GENSHIN IMPACT</h5></div>
+                </div>
+                <div class="carousel-item">
+                     <img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-go/8/8d/Blaze_New_Trails_Header.jpg" class="w-100 d-block">
+                    <div class="carousel-caption d-none d-md-block"><h5>POKEMON GO</h5></div>
+                </div>
+                <div class="carousel-item">
+                     <img src="https://techviral.net/wp-content/uploads/2022/10/Free-fire-featured.jpg" class="w-100 d-block">
+                    <div class="carousel-caption d-none d-md-block"><h5>FREE FIRE</h5></div>
+                </div>
+                <div class="carousel-item">
+                     <img src="https://tse4.mm.bing.net/th/id/OIP.Qgys97aHv3ppINuLplBENgHaD4?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-100 d-block">
+                    <div class="carousel-caption d-none d-md-block"><h5>ROBLOX</h5></div>
+                </div>
+                <div class="carousel-item">
+                     <img src="https://static.beebom.com/wp-content/uploads/2023/01/Minecraft-Download-for-Free.jpg" class="w-100 d-block">
+                    <div class="carousel-caption d-none d-md-block"><h5>MINECRAFT</h5></div>
+                </div>
+                <div class="carousel-item">
+                     <img src="https://tse1.mm.bing.net/th/id/OIP.GUsA1ukswxkt7ZQJX4cjgQHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-100 d-block">
+                    <div class="carousel-caption d-none d-md-block"><h5>FORTNITE</h5></div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container text-center"><h1 class="mt-5">TOP DOWNLOAD'S</h1></div>
+    <main>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://th.bing.com/th/id/OIP.RrU7V8fq7FxJIk8BCtoxlQHaEK?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">POKEMON</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://pokemongo.com/en" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://techviral.net/wp-content/uploads/2022/10/Free-fire-featured.jpg">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">FREE FIRE</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://ff.garena.com/en" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse2.mm.bing.net/th/id/OIP.lbx_7xNBn5uveChlWmwZOAHaFO?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">GENSHIN</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://genshin.hoyoverse.com/en/home" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/aqZdSwWyy9JcQ66BxHDKrky6.jpg">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">GOD OF WAR</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://store.steampowered.com/agecheck/app/1593500/" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse4.mm.bing.net/th/id/OIP.Qgys97aHv3ppINuLplBENgHaD4?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">ROBLOX</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://apps.microsoft.com/detail/9pmf91n3lz3m" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse1.mm.bing.net/th/id/OIP.GUsA1ukswxkt7ZQJX4cjgQHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">FORTNITE</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://store.epicgames.com/en-US/p/fortnite" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://static.beebom.com/wp-content/uploads/2023/01/Minecraft-Download-for-Free.jpg">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">MINECRAFT</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://www.minecraft.net/en-us/download" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="container text-center"><h1 class="mt-5">ACTION</h1></div>
+    <main>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://www.techspot.com/images2/downloads/topdownload/2020/10/2020-10-12-ts3_thumbs-9f9-p.webp">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">CALL OF DUTY</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://www.techspot.com/downloads/7306-call-of-duty-warzone.html" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse2.mm.bing.net/th/id/OIP.qlkW7tCg90kxj9ndSKWcywAAAA?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">HALO INFINITE</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://ccm.net/downloads/video-games/8699-halo-infinite/" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse1.mm.bing.net/th/id/OIP.RYbKlu2CRcEuWQ-76jqmcgHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">ROCKET LEAGUE</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://store.epicgames.com/en-US/p/rocket-league" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://th.bing.com/th/id/OIP.kG2K52qRqvxgsaVMI_q0lgHaEK?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">GTA V</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://gizmodo.com/download/grand-theft-auto-v-21014-download" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse4.mm.bing.net/th/id/OIP.XPIJ-jDrLF8pEvghtrWhIgHaD3?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">FIFA</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://gizmodo.com/download/ea-sports-fc-25-65324-download" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse1.mm.bing.net/th/id/OIP.0Pah4T0cci2Ixzusn8JHsAHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h6 class="card-title">HALO SPARTAN</h6>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://store.steampowered.com/app/277430/Halo_Spartan_Assault/" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://tse2.mm.bing.net/th/id/OIP.pXUUPvjUDU4YjG5sw8HnDAHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h6 class="card-title">BLACK MYTH WUKONG</h6>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://gizmodo.com/download/black-myth-wukong-64928-download" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="container text-center"><h1 class="mt-5">MIX MATCH</h1></div>
+    <main>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://th.bing.com/th/id/OIP.FXv3HA70iqDPr3LLZiFM3gHaD4?o=7&cb=ucfimg2&rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">ANGRY BIRD 2</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://apps.microsoft.com/detail/9ntpjw96tsc0" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://mobimg.b-cdn.net/androidgame_img/world_cricket_championship_2/real/1_world_cricket_championship_2.jpg">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">WCC 2</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://apps.microsoft.com/detail/9nblggh5xc9k" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="card p-2 game-card">
+            <img class="card-img-top" src="https://www.insidesport.in/wp-content/uploads/2023/05/bgh-2.jpg?resize=690">
+            <div class="card-body p-2 text-center">
+                <h5 class="card-title">BGMI</h5>
+                <p class="card-subtitle small opacity-75">UPDATED</p>
+                <a href="https://www.bluestacks.com/apps/action/battlegrounds-mobile-india-on-pc.html" class="btn btn-primary btn-sm mt-2 w-100">DOWNLOAD</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h4 class="text-secondary">GAMERZZZ</h4>
+            <p>&copy; BY YASH MALIK </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.game-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none'; 
+                }
+            });
+        });
+        document.getElementById('searchForm').addEventListener('submit', (e) => e.preventDefault());
+        const themeBtn = document.getElementById('theme-btn');
+        themeBtn.addEventListener('click', () => {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme'); 
+                themeBtn.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
+            } else {
+                body.setAttribute('data-theme', 'light'); 
+                themeBtn.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+            }
+        });
+    </script>
+</body>
+</html>
